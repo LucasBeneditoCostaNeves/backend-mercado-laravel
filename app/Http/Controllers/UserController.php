@@ -28,7 +28,7 @@ class UserController extends Controller
         $number = Carts::all()->last();
 
         $data = [
-            "id" => $number["id"] + 1,
+            "id" => $number !== null ? $number["id"] + 1 : 1,
             "name" => $request["name"],
             "price" => $request["price"],
             "image" => $request["image"],
